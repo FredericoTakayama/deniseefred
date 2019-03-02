@@ -1,0 +1,59 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block title %}<title>Denise e Frederico - Save the date: {{ save_the_date }}</title>{% endblock %}
+
+{% block extra_content %}
+<link rel="stylesheet" href="{% static 'css/gifts.css' %}">
+<script src="{% static 'jquery/gifts.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="pimg1">
+        <!-- slider -->
+        <div class="flex-container">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <img class="slide1" src="{% static 'images/gifts.jpg' %}"/>
+                    </li>
+                </ul>
+            </div>
+        </div>    
+    </div>
+    
+    <!-- apresentação -->
+    <section class="section section-light">
+        <h1>Lista de Casamento Preçolandia</h1>
+        <br>
+        <p>Para aqueles que preferem nos presentear em uma loja física, 
+            aqui vocês poderão encontrar nossas listas de presentes.</p>
+        <p>_____</p>
+        <table class='sponsor_table'>
+            <tr>
+                <th scope='row'>Loja:</th>
+                <td>Preçolandia</td>
+            </tr>
+            <tr>
+                <th scope='row'>Site:</th>
+                <td><a href="https://m.precolandia.com.br:444/weddinglist/weddinglistproduct?idweddinglist=106616">Clique aqui para acessar o site</a></td>
+            </tr>
+        </table>
+        <br>
+        <div>
+            <a href="https://m.precolandia.com.br:444/weddinglist/weddinglistproduct?idweddinglist=106616">
+                <img src="{% static 'images/precolandia.png' %}" alt="sponsor" class='sponsor'/>
+            </a>            
+        </div>
+    </section>
+
+    <!-- botão de voltar ao topo -->
+    <section class="section">
+        <div class="btn-back">
+            <div id="button">
+                <i class="fas fa-home"></i>
+                <span>voltar ao topo</span>
+            </div>            
+        </div>
+    </section>
+{% endblock %}

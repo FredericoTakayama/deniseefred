@@ -1,0 +1,129 @@
+/* Parallax */
+body, html {
+    height: 100%;
+    margin:0;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    min-height: 100%;
+    width: 100%;
+}
+
+.pimg2, .pimg3 {
+    width: 100%;
+    /* soft crop*/
+    object-fit: cover;
+    /*isto que esta atrapalhando a responsividade... rever!*/
+    min-height: 500px;
+    position: relative;
+    /* opacity: 1; */
+    background-size: cover; /* define o tamanho da imagem na tela*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* define a altura da div */
+    /* padding-bottom: 50%; */    
+    /* background-color: blue; */ /* para debug*/
+}
+.pimg2{
+    background-image: url('../images/igreja.jpg');
+    background-position: 100% 10%;
+}
+.pimg3{
+    background-image: url('../images/botton.jpg');
+}
+
+.section {
+    text-align: center;
+    padding: 50px 80px;
+}
+
+.section-light {
+    background-color: #fff;
+    color: rgb(37, 37, 37);
+}
+
+/* End Parallax */
+
+/* Slider */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  { outline: none; }
+
+.flexslider, .slides {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.flexslider a img { outline: none; border: none; }
+
+/*
+.flexslider .slides &gt; li {
+    display: none;
+    -webkit-backface-visibility: hidden;
+} */
+
+/* arredonda a imagem */
+.flexslider .slides img {
+    width: 100%; /* defines size from image*/
+    height: 400px;
+    display: block;
+    object-fit: cover; /* soft crop*/
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.slide2 {
+    object-position: 100% 20%;
+}
+
+.slide3 {
+    object-position: 100% 30%;
+}
+
+/* adiciona borda no slider */
+/* .flexslider {
+    position: relative;
+    zoom: 1;
+    padding: 10px;
+    background: #ffffff;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+    -webkit-box-shadow: 0px 1px 1px rgba(0,0,0, .2);
+    -moz-box-shadow: 0px 1px 1px rgba(0,0,0, .2);
+    box-shadow: 0px 1px 1px rgba(0,0,0, .2);
+} */
+/* End Slider */
+
+.confirmation {
+    text-align: left;
+}
+
+/* Button back to top */
+#button {
+    display: block;
+    background-color: #fff;
+    /* text-align: center; */
+    border-radius: 4px;
+    margin: 30px;
+    transition: background-color .3s;
+    z-index: 1;
+}
+#button:hover {
+    cursor: pointer;
+    background-color: #999;
+}
+#button:active {
+    background-color: #555;
+}
+/* #button icon {
+    text-align: center;
+} */
+/* End Button back to top */

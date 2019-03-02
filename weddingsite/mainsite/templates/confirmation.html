@@ -1,0 +1,76 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block title %}<title>Denise e Frederico - Save the date: {{ save_the_date }}</title>{% endblock %}
+
+{% block extra_content %}
+<link rel="stylesheet" href="{% static 'css/confirmation.css' %}">
+<script src="{% static 'jquery/confirmation.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="pimg1">
+        <!-- slider -->
+        <div class="flex-container">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <img class="slide1" src="{% static 'images/confirmation/confirmation.jpg' %}"/>
+                    </li>
+                </ul>
+            </div>
+        </div>    
+    </div>
+
+    <!-- apresentação -->
+    <section class="section section-light">
+        <h1>Confirmação de presença</h1>
+        <br>
+        <p>Faça parte da nossa história de amor, confirme sua presença.</p>
+        <p>_____</p>
+        <p>Coloque apenas o nome do convidado principal a quem o convite foi endereçado.</p>
+        <p>Ex.: "Adam Sandler e família", preencha apenas "Adam Sandler".</p>
+        <p>Depois preencha os campos com o número total de adultos, crianças menores de 5 anos, crianças com idade entre 6 e 10 anos que comparecerão ao evento.</p>
+    </section>
+
+    <!-- <p>{{ valid_guest }}</p> -->
+
+    <!-- https://simpleisbetterthancomplex.com/tutorial/2018/08/13/how-to-use-bootstrap-4-forms-with-django.html -->
+    {% load crispy_forms_tags %}
+
+    <section class="section section-light confirmation">
+        <div class="row">
+            <div class="col-sm-1 col-md-3 justify-content-md-center">
+            </div>
+            <!-- <div class="col col-sm-12 justify-content-md-center""> -->
+            <div class="col-12 col-sm-offset-3 col-sm-10 col-md-6 justify-content-md-center">                
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <table>
+                    <!-- {{ form.as_table }} -->
+                    {{ form|crispy }}
+                    </table>
+                    <input class="btn float-right" type="submit" value="Continuar">
+                </form>
+            </div>
+            <div class="col-sm-1 col-md-3 justify-content-md-center">
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="section">
+        <div class="infografico_frame">
+            <img class="infografico shadow_effect" src="{% static 'images/infografico.jpg' %}"/>
+        </div>
+    </section> -->
+
+    <!-- botão de voltar ao topo -->
+    <section class="section">
+        <div class="btn-back">
+            <div id="button">
+                <i class="fas fa-home"></i>
+                <span>voltar ao topo</span>
+            </div>            
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block title %}<title>Denise e Frederico - Save the date: {{ save_the_date }}</title>{% endblock %}
+
+{% block extra_content %}
+<link rel="stylesheet" href="{% static 'css/e_gifts.css' %}">
+<script src="{% static 'jquery/e_gifts.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="pimg1">
+        <!-- slider -->
+        <div class="flex-container">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <img class="slide1" src="{% static 'images/e_gifts.jpg' %}"/>
+                    </li>
+                </ul>
+            </div>
+        </div>    
+    </div>
+    
+    <!-- apresentação -->
+    <section class="section section-light">
+        <h1>Conta Corrente</h1>
+        <br>
+        <p>Para aqueles que preferem nos presentear através de depósito em dinheiro, 
+            segue aqui dados da nossa conta corrente para depósito.</p>
+        <p>Por questões de segurança, para mais informações, favor consultar diretamente os noivos.</p>
+        <p>_____</p>
+        <table class='sponsor_table'>
+            <tr>
+                <th scope='row'>Banco:</th>
+                <td>Santander</td>
+            </tr>
+            <tr>
+                <th scope='row'>Ag.:</th>
+                <td>0262</td>
+            </tr>
+            <tr>
+                <th scope='row'>CC:</th>
+                <td>01014710-2</td>
+            </tr>
+        </table>
+        <br>
+    </section>
+
+    <!-- botão de voltar ao topo -->
+    <section class="section">
+        <div class="btn-back">
+            <div id="button">
+                <i class="fas fa-home"></i>
+                <span>voltar ao topo</span>
+            </div>            
+        </div>
+    </section>
+{% endblock %}

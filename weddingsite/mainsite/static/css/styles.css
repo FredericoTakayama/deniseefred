@@ -1,0 +1,39 @@
+/* font
+ref.1: https://stackoverflow.com/questions/24990554/how-to-include-a-font-ttf-using-css
+ref.2: https://css-tricks.com/snippets/css/using-font-face/
+*/
+@font-face {
+    font-family: 'Chillout';
+    src: url('../font/chillout.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Tahu';
+    src: url('../font/tahu.ttf') format('truetype');
+}
+
+/* Header */
+.navbar {
+    /* overflow: hidden; */
+    /* padding-top: 50px; */
+    /* for fixed navbar */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Add a top margin to avoid content overlay */
+.main_content {
+    /* position:relative; */
+    margin-top: 56px;
+}
+
+.chillout_style {
+    font-family: 'Chillout', Fallback, sans-serif;
+}
+
+.header span {
+    color: darkgray;
+}
+/* End Header */

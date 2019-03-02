@@ -1,0 +1,440 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block title %}<title>Denise e Frederico - Save the date: {{ save_the_date }}</title>{% endblock %}
+
+{% block extra_content %}
+<link rel="stylesheet" href="{% static 'css/tips.css' %}">
+<script src="{% static 'jquery/tips.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="pimg1">
+        <!-- slider -->
+        <div class="flex-container">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <img class="slide1" src="{% static 'images/tips.jpg' %}"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- summary -->
+    <section class="section section-light">
+        <h1>Dicas</h1>
+        <br>
+        <p>Separamos algumas opções para ajudar vocês!</p>
+        <p>_____</p>
+        <div class="summary_tips">
+            <p>Aos que virão de longe, deixamos algumas sugestões de hotéis, gastronomia e entretenimento.
+                Aconselhamos hospedagens próximas ao local do casamento (Capela da FEI na região de São Bernardo do Campo) e aos que preferirem a capital paulista, indicamos hotéis na Zona Sul de São Paulo.</p>
+            <br>
+            <p>A cidade de São Bernardo do Campo é conhecida como a cidade dos batateiros e almofadinhas, uma rivalidade entre a mocidade da década de 30 e que perpetua até os dias de hoje como forma de brincadeira entre a galera da região do ABCD.</p>
+            <p>São Bernardo do Campo, além de ter sido o local onde nos conhecemos, é um município conhecido pela rota dos restaurantes, indústrias moveleira e automobilística (berço do sindicalismo).</p>
+            <p>Assim sendo, vale como passeio o parque Cidade da Criança, o parque Municipal Engenheiro Salvador Arena, a Av. Kennedy (rua dos barzinhos, shopping Golden Square e parque Rafael Lazzuri), a Rua Jurubatuba (rua das lojas de móveis direto da fábrica) e a prainha do Riacho Grande.</p>
+            <!-- av. caminho do mar 2050 -->
+            <p>A cidade de São Paulo por sua vez, é a cidade que escolhemos como lar e passamos a maior parte do tempo. Recomendamos então atrações na Av. Paulista, Liberdade e regiões Central, do Ipiranga e Ibirapuera. </p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row mb-2 tips_filter">
+            <!-- <div class="dropdown"></div> -->
+
+            <!-- </div> -->
+            <!-- <button type="button" class="btn btn-outline-dark" id="sbc">São Bernardo</button>
+            <button type="button" class="btn btn-outline-dark" id="sao_paulo">São Paulo</button> -->
+            <div class="shadow-sm p-3 mb-1 bg-white rounded">Cidade(s):
+                <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Escolha uma Cidade
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <p class="dropdown-item" id="sbc">São Bernardo</p>
+                    <p class="dropdown-item" id="sao_paulo">São Paulo</p>
+                </div>
+            </div>
+            <div class="shadow-sm p-3 mb-5 bg-white rounded">Filtros:
+                <button type="button" class="btn btn-outline-dark" id="all">Todos</button>
+                <button type="button" class="btn btn-outline-dark" id="hotels">Hoteis</button>
+                <button type="button" class="btn btn-outline-dark" id="places">Lugares</button>
+            </div>
+
+        </div>
+
+        <div class="row mb-2">
+            <!-- parque municipal engenheiro salvador arena -->
+            <div class="col-md-12 sbc places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/parque_engenheiro_salvador.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Parque Municipal Engenheiro Salvador Arena</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Avenida Caminho do Mar, 2.980, Rudge Ramos. Tel.: 4368-1246.</div>
+                        <p class="card-text mb-auto">Tem como atrações aquário de água doce, playground e área para atividades físicas.
+                                Informações: 4368-1246. Segunda a domingo, das 6h às 21h.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="http://www.saobernardo.sp.gov.br/eng.-salvador-arena">http://www.saobernardo.sp.gov.br/eng.-salvador-arena</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Golden Square Shopping -->
+            <div class="col-md-12 sbc places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                <img class="rounded-circle card_image" src="{% static 'images/golden_square.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Golden Square Shopping</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Av. Kennedy, 700 - Bairro Jardim do Mar, São Bernardo do Campo - SP</div>
+                        <p class="card-text mb-auto">Os Shoppings são conhecidos como a “praia do paulista”, por serem um acesso fácil à lojas, restaurantes e
+                             cinemas. No Golden Square encontra-se também um mini mercado da franquia Pão de açúcar.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="https://www.goldensquareshopping.com.br/">https://www.goldensquareshopping.com.br/</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parque Cidade de São Bernardo Raphael Lazzuri -->
+            <div class="col-md-12 sbc places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/parque_raphael_lazzuri.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Parque Cidade de São Bernardo Raphael Lazzuri</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Avenida Kennedy, 1.111, Bairro Anchieta. Tel.: 4332-4510.</div>
+                        <p class="card-text mb-auto">Atende a toda às faixas etárias com área destinada a atividades físicas,
+                             teatro de arena, lanchonete, sanitários e fraldário. Também possui sinalização para pessoas com deficiência
+                             ou mobilidade reduzida. Telefone: 4332-4510. Segunda a domingo, das 6h às 22h.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="http://www.saobernardo.sp.gov.br/parque-raphael-lazzuri">http://www.saobernardo.sp.gov.br/parque-raphael-lazzuri</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rua Jurubatuba -->
+            <div class="col-md-12 sbc places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/jurubatuba.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Rua Jurubatuba</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Rua Jurubatuba, Centro</div>
+                        <p class="card-text mb-auto">É o maior shopping de móveis a céu aberto do Brasil com 60m² e que visitamos muito para fazer
+                            a mobilha do nosso apartamento.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="http:www.ruajurubatuba.com.br/">http:www.ruajurubatuba.com.br/</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prainha do Riacho Grande -->
+            <div class="col-md-12 sbc places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/riacho_grande.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Prainha do Riacho Grande</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Saída no trevo de acesso ao Riacho Grande (km 29 da Via Anchieta).</div>
+                        <p class="card-text mb-auto">Possui playground, academias de ginástica ao ar livre, pontos de comércio padronizados, pedalinhos, wet-bike e passeios
+                            náuticos. Domingos, das 8h às 17h.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="http://www.saobernardo.sp.gov.br/prainha-do-riacho-grande">http://www.saobernardo.sp.gov.br/prainha-do-riacho-grande</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rua Marechal Deodoro -->
+            <div class="col-md-12 sbc places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/marechal_deodoro.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Rua Marechal Deodoro, Centro</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Rua Marechal Deodoro</div>
+                        <p class="card-text mb-auto">Um centro comercial com diversas lojas que também foram e são muito
+                            visitadas pela Denise para fazer aquelas famosas “comprinhas” de bugigangas e artigos decorativos.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="http://www.saobernardo.sp.gov.br/historiadacidade/-/asset_publisher/iykrFCtxYcvR/content/rua-marechal-deodoro-palco-da-historia-da-cidade/maximized">http://www.saobernardo.sp.gov.br/historiadacidade</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paço Municipal de São Bernardo do Campo -->
+            <div class="col-md-12 sbc places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/paco_municipal.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Paço Municipal de São Bernardo do Campo</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Rua Marechal Deodoro</div>
+                        <p class="card-text mb-auto">Local onde situam-se a Câmara e o Teatro Municipal de São Bernardo do Campo com uma área destinada ao lazer
+                            principalmente aos domingos.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="http://www.camarasbc.sp.gov.br/">http://www.camarasbc.sp.gov.br/</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avenida paulista -->
+            <div class="col-md-12 sao_paulo places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/paulista.jpg' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Avenida paulista</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Avenida paulista</div>
+                        <p class="card-text mb-auto">No Centro financeiro de São Paulo é possível visitar museus como MASP, o Japan House e a Casa das rosas,
+                            shoppings, cinemas como Itaú Cinema, Caixa Belas Artes, Parque Trianon, barzinhos e baladas na Rua Augusta, Livraria Cultura, dentre outros.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="https://www.tripadvisor.com.br/Attraction_Review-g303631-d550339-Reviews-Paulista_Avenue-Sao_Paulo_State_of_Sao_Paulo.html">https://www.tripadvisor.com.br</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Liberdade -->
+            <div class="col-md-12 sao_paulo places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/liberdade.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Liberdade</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Liberdade</div>
+                        <p class="card-text mb-auto">Local muito apreciado por nós devido a cultura japonesa que esse bairro proporciona.
+                            Gostamos de passar as tardes dos fins de semana nos entretendo com os produtos importados e finalizar o dia com um bom lámen
+                             ou nos surpreendendo com os sabores do restaurante coreano Portal da Coréia.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="https://vejasp.abril.com.br/cidades/motivos-amar-liberdade/">https://vejasp.abril.com.br/cidades/motivos-amar-liberdade/</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parque Ibirapuera -->
+            <div class="col-md-12 sao_paulo places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/parque_ibirapuera.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Parque Ibirapuera</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Av. Pedro Álvares Cabral</div>
+                        <p class="card-text mb-auto">Uma das poucas áreas verde de São paulo e um dos nossos locais preferidos para um passeio
+                            barato e muito divertido.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="https://parqueibirapuera.org/coisas-para-ver-e-fazer/">https://parqueibirapuera.org/coisas-para-ver-e-fazer/</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Museu MIS -->
+            <div class="col-md-12 sao_paulo places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/museu_mis.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Museu MIS</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Av. Europa, 158, Jardim Europa</div>
+                        <p class="card-text mb-auto">O Museu da Imagem e do Som tem como principal objetivo registrar e preservar à vida contemporânea brasileira.
+                            Neste local pudemos visitar diversas mostras como o Castelo Rá Tim Bum, Planeta Azul, Renato Russo e Amy Winehouse
+                            que se estenderam a uma caminhada na Av. Europa, carinhosamente batizada por nós como a “Rua dos Carros”.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="https://www.mis-sp.org.br/">https://www.mis-sp.org.br/</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Museu do Ipiranga -->
+            <div class="col-md-12 sao_paulo places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/museu_ipiranga.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Museu do Ipiranga</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Rua Brigadeiro Jordão, 149 - Ipiranga</div>
+                        <p class="card-text mb-auto">Infelizmente encontra-se fechado devido à problemas de estrutura, porém seu jardim (Parque da Independência)
+                            nos proporcionou e proporciona diversas caminhadas agradáveis e tombos radicais de patins. Nesta região, além do parque, gostamos também
+                            do museu de Zoologia da USP, do restaurante Feijão de Corda e das “comprinhas” na rua Gentil de Moura.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="http://www.mp.usp.br/museu-do-ipiranga">http://www.mp.usp.br/museu-do-ipiranga</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zona Central de São Paulo -->
+            <div class="col-md-12 sao_paulo places">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/centro_sp.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Lugares</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Zona Central de São Paulo</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Rua 25 de março, Rua Santa Efigênia</div>
+                        <p class="card-text mb-auto">Simplesmente nossa região favorita, onde podemos fazer nossas “comprinhas” na 25 de Março, Santa Efigênia,
+                            Galeria do Rock, Mercado Municipal e Sé, além de visitar lugares como prédia da Bovespa, edifício Banespa, museu Catavento, dentre outros.</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="https://www.youtube.com/watch?v=vxSsffcVDuc">https://www.youtube.com/watch?v=vxSsffcVDuc</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hoteis -->
+
+            <!-- Villa Rosa Hotel -->
+            <div class="col-md-12 sao_paulo hotels">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/hotels/villarosa.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Hoteis</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Villa Rosa Hotel</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Rua Manuel de Paiva 122 – CEP: 04106-020 – Vila Mariana – São Paulo – SP</div>
+                        <p class="card-text mb-auto">Telefones: (11) 5010-9393 / (11) 5084-7316</p>
+                        <p class="card-text mb-auto">Email: reservas@villarosahotel.com.br</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="https://www.villarosahotel.com.br/">https://www.villarosahotel.com.br/</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ibis Paraiso -->
+            <div class="col-md-12 sao_paulo hotels">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/hotels/ibis.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Hoteis</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Ibis budget</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Rua Vergueiro 1571 – ao lado do Metro Paraíso – CEP 04101-000 – São Paulo – SP</div>
+                        <p class="card-text mb-auto">Telefones: (11) 5085-5699</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="https://www.accorhotels.com/">https://www.accorhotels.com/pt-br/hotel-3531-ibis-budget-sao-paulo-paraiso/index.shtml?utm_term=mar&utm_campaign=ppc-ibb-mar-msn-br-pt-sp-exa-sear-br&utm_medium=cpc&utm_content=br-pt-BR-V7066&utm_source=Bing</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Radisson -->
+            <div class="col-md-12 sao_paulo hotels">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/hotels/radisson.png' %}" width="140" height="140" style="background-color:#005;">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Hoteis</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Radisson Hotel</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Alameda Santos, 85 – Paraíso – São Paulo – SP</div>
+                        <p class="card-text mb-auto">Telefones: (11) 2627-1000</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="https://www.radisson.com/">https://www.radisson.com/jardins-hotel-sp-01419-000/braplbr</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leques Brasil -->
+            <div class="col-md-12 sao_paulo hotels">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/hotels/leques_brasil.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Hoteis</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Leques Brasil Hotel</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Rua São Joaquim, 216 – Liberdade – CEP 01508-000 – São Paulo – SP</div>
+                        <p class="card-text mb-auto">Telefones: (11) 3019-4300 (recepção)/ (11) 3019-4306 (reservas)</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="http://www.lequesbrasil.com.br/">http://www.lequesbrasil.com.br/</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ibs Budget SBC -->
+            <div class="col-md-12 sbc hotels">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/hotels/ibis.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Hoteis</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Ibs Budget SBC</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Praça Samuel Sabatini, 234 – CEP 9750-700 – São Bernardo do Campo – SP</div>
+                        <p class="card-text mb-auto">Telefones: (11) 4280-6400</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="https://www.accorhotels.com/pt-br/hotel-9167-ibis-budget-sao-bernardo-do-campo/index.shtml">https://www.accorhotels.com/pt-br/hotel-9167-ibis-budget-sao-bernardo-do-campo/index.shtml</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pampas Palace Hotel -->
+            <div class="col-md-12 sbc hotels">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/hotels/pampas_palace.png' %}" width="140" height="140" style="background-color: #453203">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Hoteis</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Pampas Palace Hotel</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Av. Barão de Maua, 71 – Km 18 da Via Anchieta – CEP 09726-700 – São Bernardo do Campo – SP</div>
+                        <p class="card-text mb-auto">Telefones: (11) 4122-2000 / (11) 4126-2000 / (11) 4126-2002</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="http://www.pampaspalacehotel.com.br/?fbclid=IwAR3HTEBE9cPQ_cuD3aBBen9ciLzAvoVgM1WVT9AYtJjFgD3g7ZKtzlH2bOg">http://www.pampaspalacehotel.com.br/?fbclid=IwAR3HTEBE9cPQ_cuD3aBBen9ciLzAvoVgM1WVT9AYtJjFgD3g7ZKtzlH2bOg</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Astron Saint Moritz -->
+            <div class="col-md-12 sbc hotels">
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <img class="rounded-circle card_image" src="{% static 'images/hotels/astron.png' %}" width="140" height="140">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Hoteis</strong>
+                        <h3 class="mb-0">
+                        <p class="text-dark">Astron Saint Moritz</p>
+                        </h3>
+                        <div class="mb-1 text-muted">Rua João Pessoa 124 – Centro – CEP 09715-000 – São Bernardo do Campo – SP</div>
+                        <p class="card-text mb-auto">Telefones: (11) 2666-0662</p>
+                        <p></p>
+                        <p class="card-text mb-auto"><a href="https://astron.com.br/astron-saint-moritz/">https://astron.com.br/astron-saint-moritz/</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- botão de voltar ao topo -->
+    <section class="section">
+        <div class="btn-back">
+            <div id="button">
+                <i class="fas fa-home"></i>
+                <span>voltar ao topo</span>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block title %}<title>Denise e Frederico - Save the date: {{ save_the_date }}</title>{% endblock %}
+
+{% block extra_content %}
+<link rel="stylesheet" href="{% static 'css/save_the_date.css' %}">
+<script src="{% static 'jquery/save_the_date.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="pimg1">
+        <!-- slider -->
+        <div class="flex-container">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <img class="slide1" src="{% static 'images/save_the_date.jpg' %}"/>
+                    </li>
+                </ul>
+            </div>
+        </div>    
+    </div>
+    
+    <section class="section">
+        <div class="infografico_frame">
+            <img class="infografico shadow_effect" src="{% static 'images/invite.jpg' %}"/>
+        </div>
+    </section>
+
+    <!-- botão de voltar ao topo -->
+    <section class="section">
+        <div class="btn-back">
+            <div id="button">
+                <i class="fas fa-home"></i>
+                <span>voltar ao topo</span>
+            </div>            
+        </div>
+    </section>
+{% endblock %}

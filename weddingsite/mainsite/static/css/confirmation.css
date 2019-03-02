@@ -1,0 +1,116 @@
+/* Slider */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  { outline: none; }
+
+.flexslider, .slides {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.flexslider a img { outline: none; border: none; }
+
+/*
+.flexslider .slides &gt; li {
+    display: none;
+    -webkit-backface-visibility: hidden;
+} */
+
+/* arredonda a imagem */
+.flexslider .slides img {
+    width: 100%; /* defines size from image*/
+    height: 400px;
+    display: block;
+    object-fit: cover; /* soft crop*/
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.slide1 {
+  object-position: 100% 80%;
+}
+
+/* adiciona borda no slider */
+/* .flexslider {
+    position: relative;
+    zoom: 1;
+    padding: 10px;
+    background: #ffffff;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+    -webkit-box-shadow: 0px 1px 1px rgba(0,0,0, .2);
+    -moz-box-shadow: 0px 1px 1px rgba(0,0,0, .2);
+    box-shadow: 0px 1px 1px rgba(0,0,0, .2);
+} */
+/* End Slider */
+
+/* Infografico */
+.infografico {
+  width: 75%;
+  /* min-width: 400px; */
+  padding: 0.2em;
+}
+
+@media screen and (max-width: 600px) {
+  .infografico {
+    width: 100%;
+    padding: 0.2em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .infografico {
+    width: 80%;
+    padding: 0.2em;
+  }
+}
+
+.shadow_effect {
+  -moz-box-shadow:    10px 10px 10px 6px #ccc;
+  -webkit-box-shadow: 10px 10px 10px 6px #ccc;
+  box-shadow:         10px 10px 10px 6px #ccc;
+}
+/* End Infografico */
+
+/* Button back to top */
+.section {
+  text-align: center;
+  padding: 50px 80px;
+}
+
+.section.confirmation {
+  text-align: left;
+}
+
+.section-light {
+  background-color: #fff;
+  color: rgb(37, 37, 37);
+}
+
+#button {
+  display: block;
+  background-color: #fff;
+  /* text-align: center; */
+  border-radius: 4px;
+  margin: 30px;
+  transition: background-color .3s;
+  z-index: 1;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #999;
+}
+#button:active {
+  background-color: #555;
+}
+/* #button icon {
+  text-align: center;
+} */
+/* End Button back to top */
