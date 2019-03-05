@@ -1,0 +1,101 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block title %}<title>Denise e Frederico - Save the date: {{ save_the_date }}</title>{% endblock %}
+
+{% block extra_content %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<script src="{% static 'jquery/index.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="pimg1">
+        <!-- slider -->
+        <div class="flex-container">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <img class="slide1" src="{% static 'images/slide1.jpg' %}"/>
+                    </li>
+                    <li>
+                        <img class="slide2" src="{% static 'images/slide2.jpg' %}" />
+                    </li>
+                    <li>
+                        <img class="slide3" src="{% static 'images/slide3.jpg' %}" />
+                    </li>
+                </ul>
+            </div>
+        </div>    
+    </div>
+
+    <!-- apresentação -->
+    <section class="section section-light">
+    <h1>Sejam muito bem-vindos!</h1>
+    <br>
+    <p>Neste site colocamos algumas dicas, contamos um pouquinho da nossa história
+        e de como vai ser o nosso grande dia, pois queremos compartilhar esse sonho
+        com cada um de vocês!</p>
+    <p>_____</p>
+    </section>
+
+    <!-- atalho para a confirmação de presença -->
+    <div class="pimg2">
+        <!-- <div class="ptext">
+            <span class="border">
+                Image 2 text
+            </span>
+        </div> -->
+    </div>
+
+    <section class="section section-dark">
+        <h2>Confirmação de presença</h2>
+        <h3>Faça parte da nossa história de amor, confirme sua presença</h3>
+        <p>_____</p>
+        <p>Coloque apenas o nome do convidado principal a quem o convite foi enderaçado.
+            Ex.: "Fernando Souza e família", preencha apenas "Fernando Souza". Depois preencha
+            os campos com o número total de adultos, crianças menores de 5 anos, crianças com idade
+            entre 6 e 10 anos que comparecerão ao evento.
+        </p>
+        
+        <!-- atalho para a confirmação de presença -->
+        <!-- https://simpleisbetterthancomplex.com/tutorial/2018/08/13/how-to-use-bootstrap-4-forms-with-django.html -->
+        {% load crispy_forms_tags %}
+
+        <div class="row confirmation">
+            <div class="col-sm-1 col-md-3 justify-content-md-center">
+            </div>
+            <!-- <div class="col col-sm-12 justify-content-md-center""> -->
+            <div class="col-12 col-sm-offset-3 col-sm-10 col-md-6 justify-content-md-center">                
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <table>
+                    <!-- {{ form.as_table }} -->
+                    {{ form|crispy }}
+                    </table>
+                    <input class="btn float-right" type="submit" value="Continuar">
+                </form>
+            </div>
+            <div class="col-sm-1 col-md-3 justify-content-md-center">
+            </div>
+        </div>
+    </section>
+
+    <div class="pimg3 confirmation">
+        <!-- <div class="ptext">
+            <span class="border">
+                Image 3 text
+            </span>
+        </div> -->
+    </div>
+
+    <!-- botão de voltar ao topo -->
+    <section class="section">
+        <div class="btn-back">
+            <div id="button">
+                <i class="fas fa-home"></i>
+                <span>voltar ao topo</span>
+            </div>
+            
+        </div>
+    </section>
+{% endblock %}
