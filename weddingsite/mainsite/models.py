@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 import uuid # Required for unique book instances
 
-import datetime
+# import datetime
 
 # Obs.: se precisar apagar o banco (limpar tudo, inclusive superuser):
 # https://stackoverflow.com/questions/6485106/what-is-the-easiest-way-to-clear-a-database-from-the-cli-with-manage-py-in-djang
@@ -31,7 +31,7 @@ class Guest(models.Model):
     invited_by = models.CharField(max_length=2, choices=inviters, null=False, verbose_name='Convidado pelo(a)')
     main_inviter = models.BooleanField(default=False, null=False)
     has_presence = models.BooleanField(default=False, null=False, help_text='Confirmar Presença', verbose_name='Confirmar Presença')
-    last_update = models.DateField(default=datetime.datetime.today, null=False)
+    # last_update = models.DateField(default=datetime.datetime.today, null=False)
     # lista de opções aqui com base no max_family
     max_family_quantity = models.IntegerField(default=1, null=False)
     num_of_people = [(i,i) for i in range(1,11)]
