@@ -34,12 +34,12 @@ class Guest(models.Model):
     # last_update = models.DateField(default=datetime.datetime.today, null=False)
     # lista de opções aqui com base no max_family
     max_family_quantity = models.IntegerField(default=1, null=False)
-    num_of_people = [(i,i) for i in range(1,11)]
+    num_of_people = [(i,i) for i in range(0,11)]
     family_quantity = models.IntegerField(default=1, choices=num_of_people, null=False, help_text='Total de pessoas que irão junto incluindo você', verbose_name='Número de pessoas')
     # babies_list = [i for i in range(0,self.max_family_quantity-1)]
-    num_of_babies = models.IntegerField(default=1, choices=num_of_people, null=False, help_text='Número de crianças até 5 anos', verbose_name='Número de bebes')
+    num_of_babies = models.IntegerField(default=0, choices=num_of_people, null=False, help_text='Número de crianças até 5 anos', verbose_name='Número de bebes')
     # children_list = [i for i in range(0,self.family_quantity-1-self.num_of_babies)]
-    num_of_children = models.IntegerField(default=1, choices=num_of_people, null=False, help_text='Número de crianças entre 6 e 10 anos', verbose_name='Número de crianças')
+    num_of_children = models.IntegerField(default=0, choices=num_of_people, null=False, help_text='Número de crianças entre 6 e 10 anos', verbose_name='Número de crianças')
 
     # Metadata
     class Meta: 
