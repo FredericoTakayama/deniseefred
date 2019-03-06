@@ -255,7 +255,7 @@ def guest(request, uuid):
             # print('template get!')
             form = GuestForm(initial={
                 'id' : uuid,
-                # 'full_name': f'{guest.name} {guest.last_name}',
+                # 'full_name': f'{guest.name} {guest.lastname}',
                 'family_quantity' : guest.family_quantity,
                 'num_of_babies': guest.num_of_babies,
                 'num_of_children': guest.num_of_children,

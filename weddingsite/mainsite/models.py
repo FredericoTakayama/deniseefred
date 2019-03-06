@@ -16,7 +16,8 @@ class Guest(models.Model):
     # Fields
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this particular guest')
     name = models.CharField(max_length=50, null=False, help_text='Nome', verbose_name='Nome')
-    last_name = models.CharField(max_length=100, null=False, help_text='Sobrenome', verbose_name='Sobrenome')
+    # for some reason last_name is named as lastname in postgree, so I'm renaming it from last_name to lastname
+    lastname = models.CharField(max_length=100, null=False, help_text='Sobrenome', verbose_name='Sobrenome')
     genders = (
         ('m', 'Homem'),
         ('f', 'Mulher')
