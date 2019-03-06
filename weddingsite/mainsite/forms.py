@@ -13,7 +13,7 @@ class ConfirmationForm(forms.Form):
         # print(full_name)
         guests = Guest.objects.all()
         for guest in guests:
-            guest_full_name  = guest.name + ' ' + guest.last_name
+            guest_full_name  = guest.name + ' ' + guest.lastname
             # print(guest_full_name)
             if (guest_full_name == full_name):
                 return guest
