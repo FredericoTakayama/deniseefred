@@ -1,1 +1,1 @@
-web: gunicorn weddingsite.wsgi --pythonpath ../deniseefred --log-file -
+web: gunicorn weddingsite.wsgi --pythonpath '/app/weddingsite' --log-file -
