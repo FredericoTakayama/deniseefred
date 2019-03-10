@@ -30,7 +30,7 @@ def index(request):
 
         # Check if the form is valid:
         if form.is_valid():
-            guest = form.cleaned_data['full_name']
+            guest = form.cleaned_data['password']
 
             return HttpResponseRedirect(guest.get_absolute_url())
         else:
@@ -149,7 +149,7 @@ def confirmation(request):
 
         # Check if the form is valid:
         if form.is_valid():
-            guest = form.cleaned_data['full_name']
+            guest = form.cleaned_data['password']
 
             # form = GuestForm(initial={
             #     'full_name': full_name,
@@ -219,13 +219,14 @@ def guest(request, uuid):
 
             # Check if the form is valid:
             if form.is_valid():
-
                 # atualizando banco de dados
-                print(form.cleaned_data['has_presence'])
+                # print(form.cleaned_data['has_presence'])
                 guest.has_presence = form.cleaned_data['has_presence']
                 guest.family_quantity = form.cleaned_data['family_quantity']
                 guest.num_of_babies = form.cleaned_data['num_of_babies']
                 guest.num_of_children = form.cleaned_data['num_of_children']
+                guest.message = form.cleaned_data['message']
+                guest.last_update = datetime.today()
                 guest.save()
 
                 context = {
