@@ -4,28 +4,38 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
 
 class ConfirmationForm(forms.Form):
-    full_name = forms.CharField(label='Nome Completo')
+    # full_name = forms.CharField(label='Nome Completo')
+    password = forms.CharField(label='Entre com a senha fornecida no convite')
 
-    # para validar algum campo, o nome da função de validação precisa começar com clean_<nome do campo>
-    def clean_full_name(self):
-        # fetch guest
-        full_name = self.cleaned_data['full_name']
-        # print(full_name)
-        guests = Guest.objects.all()
-        for guest in guests:
-            guest_full_name  = guest.name + ' ' + guest.lastname
-            # print(guest_full_name)
-            if (guest_full_name == full_name):
-                return guest
-        raise ValidationError(_('Nome inválido - nome não consta na lista de presença (está escrito idêntico ao convite?)'))
+    # # para validar algum campo, o nome da função de validação precisa começar com clean_<nome do campo>
+    # def clean_full_name(self):
+    #     # fetch guest
+    #     full_name = self.cleaned_data['full_name']
+    #     # print(full_name)
+    #     guests = Guest.objects.all()
+    #     for guest in guests:
+    #         guest_full_name  = guest.name + ' ' + guest.lastname
+    #         # print(guest_full_name)
+    #         if (guest_full_name == full_name):
+    #             return guest
+    #     raise ValidationError(_('Nome inválido - nome não consta na lista de presença (está escrito idêntico ao convite?)'))
+
+    def clean_password(self):
+        password = self.cleaned_data['password']
+        try:
+            guest = Guest.objects.get(password=password)
+        except:
+            raise ValidationError(_('Senha inválida - por favor, se atente com as letras maiúsculas e minusculas'))
+        return guest
 
 class GuestForm(forms.Form):
     # full_name = forms.CharField(label='Nome Completo')
     id = forms.UUIDField(required=False)
     family_quantity = forms.IntegerField(label='Total de pessoas que irão junto incluindo você:')
-    num_of_babies = forms.IntegerField(label='Destas, quantas são menores que cinco anos:')
-    num_of_children = forms.IntegerField(label='E quantas estão entre 5 e 10 anos:')
+    num_of_babies = forms.IntegerField(label='Destas, quantas são menores que cinco anos de idade:')
+    num_of_children = forms.IntegerField(label='E quantas estão entre 5 e 10 anos de idade:')
     has_presence = forms.BooleanField(label='Confirmar presença', required=False)
+    message = forms.CharField(widget=forms.Textarea, label='Deixe aqui sua mensagem aos noivos', required=False)
 
     # também da pra fazer por lista de opções. Para trazer o valor do banco é necessário declarar
     # as condições inicias na instancia desta classe no views.py:
@@ -95,3 +105,6 @@ class GuestForm(forms.Form):
     def clean_id(self):
         id = self.cleaned_data['id']
         return id
+
+    def clean_message(self):
+        return self.cleaned_data['message']

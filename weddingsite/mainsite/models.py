@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 import uuid # Required for unique book instances
 
-# import datetime
+import datetime
 
 # Obs.: se precisar apagar o banco (limpar tudo, inclusive superuser):
 # https://stackoverflow.com/questions/6485106/what-is-the-easiest-way-to-clear-a-database-from-the-cli-with-manage-py-in-djang
@@ -32,7 +32,6 @@ class Guest(models.Model):
     invited_by = models.CharField(max_length=2, choices=inviters, null=False, verbose_name='Convidado pelo(a)')
     main_inviter = models.BooleanField(default=False, null=False)
     has_presence = models.BooleanField(default=False, null=False, help_text='Confirmar Presença', verbose_name='Confirmar Presença')
-    # last_update = models.DateField(default=datetime.datetime.today, null=False)
     # lista de opções aqui com base no max_family
     max_family_quantity = models.IntegerField(default=1, null=False)
     num_of_people = [(i,i) for i in range(0,11)]
@@ -41,6 +40,9 @@ class Guest(models.Model):
     num_of_babies = models.IntegerField(default=0, choices=num_of_people, null=False, help_text='Número de crianças até 5 anos', verbose_name='Número de bebes')
     # children_list = [i for i in range(0,self.family_quantity-1-self.num_of_babies)]
     num_of_children = models.IntegerField(default=0, choices=num_of_people, null=False, help_text='Número de crianças entre 6 e 10 anos', verbose_name='Número de crianças')
+    message = models.TextField(null=True, help_text='Deixe aqui sua mensagem aos noivos')
+    password = models.CharField(max_length=9, default=str(uuid.uuid4())[:8], null=False)
+    last_update = models.DateField(default=datetime.datetime.today, null=False)
 
     # Metadata
     class Meta: 
@@ -56,3 +58,9 @@ class Guest(models.Model):
         """String for representing the MyModelName object (in Admin site etc.)."""
         return f'{self.id} ({self.name})'
         # return self.name
+
+    # def save(self, *args, **kwargs):
+    #     if not self.password:
+    #         print(self.id)
+    #         self.password = str(self.id())[:8]
+    #     super(Subject, self).save(*args, **kwargs)
