@@ -40,7 +40,7 @@ class Guest(models.Model):
     num_of_babies = models.IntegerField(default=0, choices=num_of_people, null=False, help_text='Número de crianças até 5 anos', verbose_name='Número de bebes')
     # children_list = [i for i in range(0,self.family_quantity-1-self.num_of_babies)]
     num_of_children = models.IntegerField(default=0, choices=num_of_people, null=False, help_text='Número de crianças entre 6 e 10 anos', verbose_name='Número de crianças')
-    message = models.TextField(null=True, help_text='Deixe aqui sua mensagem aos noivos')
+    message = models.TextField(null=True, help_text='Deixe aqui sua mensagem aos noivos', blank=True)
     password = models.CharField(max_length=9, default=str(uuid.uuid4())[:8], null=False)
     last_update = models.DateField(default=datetime.datetime.today, null=False)
 
