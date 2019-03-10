@@ -15,13 +15,13 @@ class GuestAdmin(admin.ModelAdmin):
     list_filter = ['has_presence']
     # organização dos campos
     fields = [
-            # ('password'),
+            ('password'),
             ('name', 'lastname',),
             ('gender', 'has_presence', 'is_vip', 'main_inviter', 'invited_by'),
             'address',
             ('max_family_quantity', 'family_quantity'),
             ('num_of_babies', 'num_of_children'),
-            ('message')        
+            ('message')
     ]
 
 admin.site.register(Guest, GuestAdmin)
