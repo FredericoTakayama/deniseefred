@@ -62,18 +62,28 @@ class GuestForm(forms.Form):
         return guest
 
     def clean_num_of_babies(self):
+        guest = self.fetch_guest()
+        max_family_quantity = getattr(guest, 'max_family_quantity')
         num_of_babies = self.cleaned_data['num_of_babies']
-        if num_of_babies >= 0:
-            return num_of_babies
-        else:
+
+        if num_of_babies < 0:
             raise ValidationError(_('Número inválido - deve ser maior ou igual a 0'))
+        elif num_of_babies > max_family_quantity-1:
+            raise ValidationError(_('Numero inválido - deve ser maior ou igual à 0 e menor ou igual a ' + str(max_family_quantity-1)))
+        else:
+            return num_of_babies
     
     def clean_num_of_children(self):
+        guest = self.fetch_guest()
+        max_family_quantity = getattr(guest, 'max_family_quantity')
         num_of_children = self.cleaned_data['num_of_children']
-        if num_of_children >= 0:
-            return num_of_children
-        else:
+
+        if num_of_children < 0:
             raise ValidationError(_('Número inválido - deve ser maior ou igual a 0'))
+        elif num_of_children > max_family_quantity-1:
+            raise ValidationError(_('Numero inválido - deve ser maior ou igual à 0 e menor ou igual a ' + str(max_family_quantity-1)))
+        else:
+            return num_of_children
 
     def clean_family_quantity(self):
         # print(self.id)
